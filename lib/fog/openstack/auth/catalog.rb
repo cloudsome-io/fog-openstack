@@ -55,7 +55,7 @@ module Fog
               list << endpoint_url(endpoint, interface) if endpoint_match?(endpoint, interface, region)
             end
           end
-          raise EndpointError, 'Multiple endpoints found' if list.size > 1
+        #   raise EndpointError, 'Multiple endpoints found' if list.size > 1
           list[0]
         end
       end
