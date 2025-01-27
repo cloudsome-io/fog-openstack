@@ -23,7 +23,7 @@ module Fog
         end
 
         def initialize(auth, options)
-          puts "Fog options received: #{auth.inspect} , #{options.inspect}"
+          Excon.defaults[:omit_default_port] = true
           raise URLError, 'No URL provided' if auth[:openstack_auth_url].nil? || auth[:openstack_auth_url].empty?
           @creds = {
             :data => build_credentials(auth),
