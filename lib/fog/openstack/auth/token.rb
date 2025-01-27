@@ -23,6 +23,7 @@ module Fog
         end
 
         def initialize(auth, options)
+          puts "Fog options received: #{auth.inspect} , #{options.inspect}"
           raise URLError, 'No URL provided' if auth[:openstack_auth_url].nil? || auth[:openstack_auth_url].empty?
           @creds = {
             :data => build_credentials(auth),
